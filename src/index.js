@@ -1,9 +1,9 @@
-import './styles.css';
+import './scss/main.scss';
 import './js/header';
 import './js/main';
 import './js/footer';
 import './js/preLoaderPage';
 import './js/language-localstorage';
-import getLocalLanguage from './js/language-localstorage';
-
-getLocalLanguage();
+import './js/registration';
+import './js/login';
+import './js/checkUser';

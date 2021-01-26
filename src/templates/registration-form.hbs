@@ -1,0 +1,85 @@
+ <div class="login-html is-hidden">
+        <input
+          id="tab-1"
+          type="radio"
+          name="tab"
+          class="sign-in"
+          checked
+        /><label for="tab-1" class="tab">Sign In</label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up" /><label
+          for="tab-2"
+          class="tab"
+          >Sign Up</label
+        >
+        <div class="login-form">
+          <div class="sign-in-htm">
+            <div class="group">
+              <label class="label"
+                >Email Address
+                <input
+                  type="email"
+                  class="input"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                  required
+                />
+              </label>
+            </div>
+            <div class="group">
+              <label class="label"
+                >Password
+                <input
+                  type="password"
+                  class="input"
+                  data-type="password"
+                  placeholder="4 characters minimum"
+                  data-type="password"
+                  minlength="4"
+                  maxlength="16"
+                  required
+                />
+              </label>
+            </div>
+            <!-- <div class="group">
+          <input id="check" type="checkbox" class="check" checked>
+          <label for="check"><span class="icon"></span> Keep me Signed in</label>
+        </div> -->
+            <div class="group">
+              <input type="submit" class="button" value="Sign In" />
+            </div>
+            <div class="hr"></div>
+            <div class="foot-lnk">
+              <a href="#forgot">Forgot Password?</a>
+            </div>
+          </div>
+          <div class="sign-up-htm">
+            <form class="form__submit group">
+              <label class="label"
+                >Username
+                <input type="text" class="input username" />
+              </label>
+              <label class="label"
+                >Password
+                <input
+                  type="password"
+                  class="input password"
+                  placeholder="4 characters minimum"
+                  data-type="password"
+                  minlength="4"
+                  maxlength="16"
+                  required
+                />
+              </label>
+              <label class="label"
+                >Email Address
+                <input
+                  type="email"
+                  class="input email"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                  required
+                />
+              </label>
+              <button type="submit" class="button">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>

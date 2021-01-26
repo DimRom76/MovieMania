@@ -1,0 +1,12 @@
+{{#each this}}
+    <div data-id={{id}} class="card">
+        <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{poster_path}}" data-id={{"id"}} alt={{title}} />
+        <h5 class="card-title" data-id={{id}}>{{title}} ({{release_date}}) </h5>
+        <p class="card-text" data-id={{id}}>Рейтинг: {{vote_average}}</p>
+        <div class="btn-group btn-group-sm" role="group" >
+            <button type="button" class="btn btn-light" data-id={{id}}>Избранное</button>
+            <button type="button" class="btn btn-light" data-id={{id}}>Посмотреть</button>
+            <button type="button" class="btn btn-light" data-id={{id}}>Посмотрел</button>
+        </div>
+    </div>
+{{/each}} 

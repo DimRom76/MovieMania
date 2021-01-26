@@ -8,10 +8,11 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>MovieMania</title>
   </head>
 
-  <body>
+  <body >
     <header class="header">
       <nav class="navigation">
         <ul class="navigation__list">
@@ -42,13 +43,28 @@
         </div>
 
         <div class="user__navigation">
-          <p><i class="material-icons login">account_circle</i></p>
-          <p><i class="material-icons logout">login</i></p>
+          <p class="user__account is-hidden">
+            <i class="material-icons user">account_circle</i>
+          </p>
+          <p class="user__login"><i class="material-icons login">login</i></p>
         </div>
       </nav>
     </header>
-    <main class="main"></main>
+    <main class="main container">
+      <div class='list_movies'></div>
+      <button
+      class="btn btn-primary is-hidden"
+      type="button"
+      data-action="load more"
+    >
+      <span
+        class="spinner-border spinner-border-sm is-hidden"
+        role="status"
+        aria-hidden="true"
+      ></span>
+
+      <span class="label spinner">See more</span>
+    </main>
     <footer class="footer"></footer>
-    <div class="modal__oferlay is-hidden"></div>
   </body>
 </html>

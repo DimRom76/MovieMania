@@ -6,6 +6,8 @@ const refs = {
     RUSSIAN: 'ru_RU',
     ENGLISH: 'en_EN',
   },
+  registrationOverlayRef: document.querySelector('.modal__overlay'),
+  userLogin: document.querySelector('.user__login'),
 };
 
 export default refs;

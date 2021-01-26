@@ -6,6 +6,7 @@ setClassForLanguage();
 
 function setClassForLanguage() {
   const savedTheme = localStorage.getItem('language');
+  console.log(savedTheme);
   if (savedTheme === refs.Languages.RUSSIAN) {
     refs.languageEn.classList.add('hidden');
     refs.language.classList.add(refs.Languages.RUSSIAN);
@@ -13,6 +14,12 @@ function setClassForLanguage() {
   if (savedTheme === refs.Languages.ENGLISH) {
     refs.languageRu.classList.add('hidden');
     refs.language.classList.add(refs.Languages.ENGLISH);
+  }
+
+  if (savedTheme === null) {
+    refs.languageEn.classList.add('hidden');
+    refs.language.classList.add(refs.Languages.RUSSIAN);
+    localStorage.setItem('language', refs.Languages.RUSSIAN);
   }
 }
 

@@ -1,0 +1,23 @@
+     <div class="modalDiv card mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img
+              src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2${poster_path}`}
+              width="300px"
+              alt={title}
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h3 class="card-title">
+                {title} / {original_title} ({apiData.getYear(release_date)})
+              </h3>
+              <p class="card-text">Рейтинг: {Number(vote_average) * 10}%</p>
+              <h4 class="card-title">Обзор</h4>
+              <p class="card-text">{overview}</p>
+              <h4 class="card-title">Жанры</h4>
+              <p class="card-text">{genresList}</p>
+            </div>
+          </div>
+        </div>
+      </div>
