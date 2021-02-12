@@ -1,0 +1,21 @@
+    <p class="card-group-markup">
+        {{#if favorites}}
+        <i class="material-icons favorites icon_active" data-status='favorites' data-id={{id}}>favorite_border</i>
+        {{else}}
+        <i class="material-icons favorites icon_disabled" data-status='favorites' data-id={{id}}>favorite_border</i>
+        {{/if}}
+    </p>
+    <p class="card-group-markup">
+        {{#if watched}}
+         <i class="material-icons watch__later icon_active" data-status='watched' data-id={{id}}>check_circle_outline</i>
+        {{else}}
+         <i class="material-icons watch__later icon_disabled" data-status='watched' data-id={{id}}>check_circle_outline</i>
+        {{/if}}
+    </p>
+        <p class="card-group-markup">
+        {{#if watchedLater}}
+        <i class="material-icons watched icon_active" data-status='watchedLater' data-id={{id}}>bookmark_border</i>
+        {{else}}
+        <i class="material-icons watched icon_disabled" data-status='watchedLater' data-id={{id}}>bookmark_border</i>
+        {{/if}}
+    </p>

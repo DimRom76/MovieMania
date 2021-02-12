@@ -1,0 +1,247 @@
+$anim_time: 1s;
+
+//OPEN
+
+@keyframes topBar_open {
+  0% {
+    transform: translateX(0px) translateY(-5px) rotate(45deg);
+
+    // transform: translateY(0px) rotate(0deg);
+    width: 30px;
+  }
+  10% {
+    transform: translateX(0px) translateY(-5px) rotate(45deg);
+
+    // transform: translateY(-8px) rotate(0deg);
+    width: 30px;
+  }
+  50% {
+    transform: translateX(0px) translateY(-5px) rotate(45deg);
+
+    // transform: translateY(25px) rotate(45deg);
+    width: 42px;
+  }
+  75% {
+    transform: translateX(0px) translateY(-5px) rotate(45deg);
+
+    // transform: translateY(12px) rotate(45deg);
+    width: 42px;
+  }
+  100% {
+    transform: translateX(0px) translateY(-5px) rotate(45deg);
+    width: 42px;
+  }
+}
+
+@keyframes bottomBar_open {
+  0% {
+    transform: translateX(-15px) translateY(-30px) rotate(-45deg);
+
+    // transform: translateY(0px) rotate(0deg);
+    width: 0px;
+  }
+  10% {
+    transform: translateX(-15px) translateY(-30px) rotate(-45deg);
+
+    // transform: translateY(-8px) rotate(0deg);
+    width: 30px;
+  }
+  60% {
+    transform: translateX(-15px) translateY(-30px) rotate(-45deg);
+
+    // transform: translateY(0px) rotate(-45deg);
+    width: 42px;
+  }
+  75% {
+    transform: translateX(-15px) translateY(-30px) rotate(-45deg);
+
+    // transform: translateY(-10px) rotate(-45deg);
+    width: 42px;
+  }
+  100% {
+    transform: translateX(-15px) translateY(-30px) rotate(-45deg);
+    width: 42px;
+  }
+}
+
+@keyframes menuLabel_open {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(-18px);
+  }
+  45% {
+    transform: translateY(44px);
+    opacity: 1;
+  }
+  48% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+}
+
+// CLOSE
+
+@keyframes topBar_close {
+  0% {
+    transform: translateY(17px) rotate(45deg);
+    width: 42px;
+  }
+  35% {
+    transform: translateY(-8px) rotate(-4deg);
+    width: 30px;
+  }
+  53% {
+    transform: translateY(10px) rotate(3deg);
+    width: 30px;
+  }
+  70% {
+    transform: translateY(-6px) rotate(0deg);
+    width: 30px;
+  }
+  100% {
+    transform: translateY(-2px) rotate(0deg);
+    width: 30px;
+  }
+}
+
+@keyframes bottomBar_close {
+  0% {
+    transform: translateY(-8px) rotate(-45deg);
+    width: 42px;
+  }
+  35% {
+    transform: translateY(-18px) rotate(6deg);
+    width: 30px;
+  }
+  53% {
+    transform: translateY(0px) rotate(-3deg);
+    width: 30px;
+  }
+  68% {
+    transform: translateY(-7px) rotate(0deg);
+    width: 30px;
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    width: 30px;
+  }
+}
+
+@keyframes menuLabel_close {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  5% {
+    transform: translateY(25px);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(-30px);
+    opacity: 1;
+  }
+  37% {
+    transform: translateY(-22px);
+    opacity: 1;
+  }
+  45% {
+    transform: translateY(-22px);
+    opacity: 1;
+  }
+  58% {
+    transform: translateY(8px) rotate(-10deg);
+    opacity: 1;
+  }
+  83% {
+    transform: translateY(-6px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+#menu__btn {
+  display: block;
+  position: relative;
+  text-align: center;
+  width: 60px;
+  height: 65px;
+
+  &:before,
+  &:after {
+    content: '';
+    width: 60%;
+    height: 3px;
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    // border-radius: 20px;
+  }
+
+  &:before {
+    transform-origin: left center;
+    top: 20px;
+  }
+
+  &:after {
+    left: 0;
+    top: 45px;
+    transform-origin: right center;
+  }
+
+  .text {
+    color: #fff;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.open {
+    &:before {
+      animation: topBar_open $anim_time ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    &:after {
+      animation: bottomBar_open $anim_time ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    .text {
+      animation: menuLabel_open $anim_time ease-in;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  &.close {
+    &:before {
+      animation: topBar_close $anim_time ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    &:after {
+      animation: bottomBar_close $anim_time ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    .text {
+      animation: menuLabel_close $anim_time ease-in;
+      animation-fill-mode: forwards;
+    }
+  }
+}

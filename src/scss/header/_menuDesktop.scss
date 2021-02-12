@@ -1,0 +1,101 @@
+// vars and keyframes
+$delay: 0.2s;
+$menu-items: 5;
+
+@keyframes drop {
+  from {
+    top: 0px;
+  }
+  70% {
+    top: 10px;
+    animation-timing-function: ease-in;
+  }
+
+  100% {
+    opacity: 1;
+    top: 250px;
+    animation-timing-function: ease-in;
+  }
+  to {
+    top: 0px;
+    animation-timing-function: ease-out;
+  }
+}
+
+.wrapper {
+  position: relative;
+
+  .menu {
+    width: 144px;
+    position: absolute;
+    z-index: 3000;
+    top: 115px;
+    left: -132px;
+
+    @media (min-width: 768px) {
+      top: 58px;
+    }
+
+    @media (min-width: 1024px) {
+      top: 57px;
+    }
+  }
+}
+
+.menu__list {
+  width: 100%;
+  padding-left: 0;
+}
+
+.menu__list__item {
+  display: flex;
+  cursor: pointer;
+  list-style: none;
+  padding: 10px 5px;
+  top: 0px;
+  background: #30246b;
+  box-shadow: 0 0 2px #6152a8;
+
+  &:hover i + p,
+  &:hover i + a,
+  &:hover > .material-icons.icons__header_menu {
+    color: $secondaryColor;
+  }
+
+  .menu__list__title {
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+  }
+}
+
+.menu__list__item a {
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+}
+
+.menu__list__item {
+  opacity: 0;
+}
+
+.menu__list--animate .menu__list__item {
+  animation: drop 0.1s;
+  animation-fill-mode: forwards;
+  align-items: center;
+
+  // opacity: 1;
+
+  @for $i from 1 through $menu-items {
+    &:nth-child(#{$i}) {
+      animation-delay: $delay * ($i - 1);
+    }
+  }
+}
+
+.icons__header_menu {
+  font-size: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}

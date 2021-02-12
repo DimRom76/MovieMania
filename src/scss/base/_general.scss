@@ -1,0 +1,107 @@
+$backgroundColor: #1a143b;
+$ListMovieColor: #281f55;
+$headerFooterColor: #3c3075;
+$secondaryColor: #f8104d;
+
+$primaryColorCircle: #f8104d;
+$secondaryColorCircle: #fff;
+$backgroundColorCircle: #281f55;
+
+$border-radius: 3px;
+$primary: #f2f2f2;
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: $backgroundColor;
+  color: #fff;
+  font-family: Noto Sans TC, sans-serif;
+  letter-spacing: 0.03em;
+  margin: 0;
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  border-style: none;
+  // max-width: 100%;
+}
+
+input,
+textarea {
+  outline: none;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+select {
+  outline: none;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.is-hidden {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+
+  min-height: calc(100vh - 187px);
+
+
+  @media screen and (max-width: 540px) {
+    //max-width: 540px;
+    max-width: 400px;
+    min-width: 320px;
+  }
+
+  @media screen and (min-width: 541px) and (max-width: 768px) {
+    max-width: 767px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    max-width: 1023px;
+    min-height: calc(100vh - 130px);
+  }
+
+  @media (min-width: 1024px) {
+    min-width: 1024px;
+    max-width: 1400px;
+    min-height: calc(100vh - 130px);
+  }
+}
+
+.main {
+  padding-top: 20px;
+}
+
+.material-icons {
+  color: #c8c0ed;
+  justify-content: center;
+  align-items: center;
+}

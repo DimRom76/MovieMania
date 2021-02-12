@@ -1,0 +1,81 @@
+ <div class="login-html is-hidden ">
+        <input
+          id="tab-1"
+          type="radio"
+          name="tab"
+          class="sign-in"
+        /><label for="tab-1" class="tab sign__in">Войти</label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up" /><label
+          for="tab-2"
+          class="tab up"
+          >Регистрация</label
+        >
+        <div class="login-form">
+          <div class="sign-in-htm">
+            <form class="form__sing__in group">
+              <label class="label"
+                >Адрес почты
+                <input
+                  type="email"
+                  class="input email__sign__in"
+                  placeholder="moviemania@gmail.com"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                  required
+                />
+              </label>
+              <label class="label"
+                >Пароль
+                <input
+                  type="password"
+                  class="input password__sign__in"
+                  placeholder="6 characters minimum"
+                  data-type="password"
+                  minlength="4"
+                  maxlength="16"
+                  required
+                />
+              </label>
+              <button type="submit" class="button submit__login">Войти</button>
+            </form>
+            <div class="hr"></div>
+            <p class="google__login">или войдите с помощью</p>
+              <div class="login__wrap">
+              <i class="facebook_login"></i>
+            <i class="google_login"></i>
+            <i class="github_login"></i>
+            <i class="twitter_login"></i>
+            </div>
+          </div>
+          <div class="sign-up-htm">
+            <form class="form__sign__up group">
+              <label class="label"
+                >Имя пользователя
+                <input type="text" class="input username__sign__up" required  placeholder="Ben Afflek" pattern='[A-Za-z]{1, 15}' />
+              </label>
+              <label class="label"
+                >Адрес почты
+                <input
+                  type="email"
+                  class="input email__sign__up"
+                  placeholder="moviemania@gmail.com"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                  required
+                />
+              </label>
+              <label class="label"
+                >Пароль
+                <input
+                  type="password"
+                  class="input password__sign__up"
+                  placeholder="6 characters minimum"
+                  data-type="password"
+                  minlength="4"
+                  maxlength="16"
+                  required
+                />
+              </label>
+              <button type="submit" class="button submit__reg">Регистрация</button>
+            </form>
+          </div>
+        </div>
+      </div>

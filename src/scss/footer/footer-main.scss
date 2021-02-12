@@ -1,0 +1,24 @@
+.footer_container {
+  height: 50px;
+  background: $headerFooterColor;
+  padding: 12px 10px;
+  text-align: center;
+  width: 100%;
+  min-width: 320px;
+
+  .footer_copyright {
+    font-size: 10px;
+    letter-spacing: 0.03em;
+    font-weight: 300;
+  }
+
+  .footer_copyright.team {
+    cursor: pointer;
+  }
+
+  .material-icons.footer-icon {
+    color: #f8104d;
+    font-size: 10px;
+    align-items: center;
+  }
+}

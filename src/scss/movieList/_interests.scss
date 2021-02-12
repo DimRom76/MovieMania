@@ -1,0 +1,56 @@
+/* Style the tab */
+.movie__interests__tab {
+  overflow: hidden;
+  border-radius: 13px 13px 0 0;
+  background-color: $ListMovieColor;
+}
+
+/* Style the buttons that are used to open the tab content */
+.movie__interests__tablinks {
+  position: relative;
+}
+
+.movie__interests__tab button {
+  background-color: inherit;
+  font-family: Noto Sans TC, sans-serif;
+  letter-spacing: 0.03em;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  color: #fff;
+}
+
+/* Change background color of buttons on hover */
+.movie__interests__tab button:hover {
+  background-color: $headerFooterColor;
+  color: #fff;
+}
+
+/* Create an active/current tablink class */
+.movie__interests__tab button.tablinks__active::after {
+  // background-color: $primaryColor;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  height: 3px;
+
+  background-color: #f8104d;
+  transition: background-color 0.4s;
+}
+
+/* Style the tab content */
+.movie__interests__tabcontent {
+  display: none;
+
+  background-color: $ListMovieColor;
+  border-top: none;
+}
+
+.movie__interests__tabcontent {
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}

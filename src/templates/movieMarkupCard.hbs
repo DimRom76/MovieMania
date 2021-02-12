@@ -1,23 +1,69 @@
-     <div class="modalDiv card mb-3">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img
-              src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2${poster_path}`}
-              width="300px"
-              alt={title}
-            />
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h3 class="card-title">
-                {title} / {original_title} ({apiData.getYear(release_date)})
-              </h3>
-              <p class="card-text">Рейтинг: {Number(vote_average) * 10}%</p>
-              <h4 class="card-title">Обзор</h4>
-              <p class="card-text">{overview}</p>
-              <h4 class="card-title">Жанры</h4>
-              <p class="card-text">{genresList}</p>
-            </div>
-          </div>
-        </div>
+<button type="button" class="btn__back">
+  <span class="material-icons">reply</span>
+  {{#if languageRu}}
+  Назад
+  {{else}}
+  Back
+  {{/if}}
+</button>
+
+<div class="movie__markup__card ">
+  <div class="movie__markup__img">
+    <img src="{{poster_path}}" alt={{title}}  width="300px" height="450px" />
+  </div>
+  <div class="movie__content">
+    <div class="card-body">
+      <h3 class="card-title-movie">{{title}}</h3>
+      <p class="card-body-date">{{release_date}}</p>
+      <p class="card-title-text">{{allCountries}}</p>
+      <p class="card-title-text">{{allGenres}}</p>
+      <div class="card-title-text">
+        <p class="icon-runtime-min"><i class="material-icons icon-runtime">theaters</i>{{runtime}} {{min}}</p>
       </div>
+      <p class="card-text-overview">{{overview}}</p>
+      <p class="card-text-rainting" data-id={{id}}><i class="material-icons icon-raiting">star_rate</i>{{vote_average}}
+      </p>
+    </div>
+    <div class="btn-group btn-group-sm status__film__js" data-container={{id}} role="group">
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="movie__markup__tab">
+    <button class="movie__markup__tablinks " id="defaultOpen" data-tabname="actors">
+      {{#if languageRu}}
+      Актеры
+      {{else}}
+      Actors
+      {{/if}}
+    </button>
+    <button class="movie__markup__tablinks" data-tabname="reviews">
+      {{#if languageRu}}
+      Отзывы
+      {{else}}
+      Reviews
+      {{/if}}
+    </button>
+    <button class="movie__markup__tablinks" data-tabname="trailers">
+      {{#if languageRu}}
+      Трейлеры
+      {{else}}
+      Trailers
+      {{/if}}
+    </button>
+  </div>
+
+  <!-- Tab content -->
+  <div id="actors" class="movie__markup__tabcontent">
+
+  </div>
+
+  <div id="reviews" class="movie__markup__tabcontent">
+
+  </div>
+
+  <div id="trailers" class="movie__markup__tabcontent">
+
+  </div>
+</div>

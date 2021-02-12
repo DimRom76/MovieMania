@@ -1,0 +1,399 @@
+.movie__markup__card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    margin-top: 20px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 20px 10px 10px 0px;
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  .movie__markup__img {
+    background-color: $headerFooterColor;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.3);
+
+    & img {
+      display: block;
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.btn__back {
+  background-color: #3c3075;
+  height: 32px;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  border-width: 0px;
+  font-family: Noto Sans TC, sans-serif;
+  letter-spacing: 0.03em;
+  font-size: 12px;
+  font-weight: 400;
+  color: #c8c0ed;
+  padding: 5px 7px 7px 5px;
+
+  text-align: center;
+
+  &:hover {
+    background-color: #40337c;
+  }
+
+  & span {
+    vertical-align: text-top;
+    margin-right: 3px;
+    font-size: 16px;
+  }
+}
+
+.icon-raiting {
+  color: $secondaryColor;
+  font-size: 22px;
+  margin-right: 3px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 26px;
+  }
+}
+
+.card-title {
+  margin-top: 10px;
+}
+
+.card-title-text {
+  font-size: 12px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 500;
+
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 14px;
+    font-size: 14px;
+  }
+}
+
+.icon-runtime-min {
+  position: relative;
+  padding-left: 20px;
+  margin-top: 0;
+
+  @media screen and (min-width: 1024px) {
+    padding-left: 24px;
+  }
+
+  .icon-runtime {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    font-size: 18px;
+
+    // @media screen and (min-width: 768px) {
+
+    // }
+
+    @media screen and (min-width: 1024px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.card-text-overview {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 400;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+}
+
+.btn-group-icons {
+  display: flex;
+}
+
+.icons-card-movie {
+  font-size: 40px;
+}
+/* Style the tab дд*/
+.movie__markup__tab {
+  overflow: hidden;
+  border-radius: 13px 13px 0 0;
+  background-color: $ListMovieColor;
+}
+
+/* Style the buttons that are used to open the tab content */
+.movie__markup__tablinks {
+  position: relative;
+}
+
+.movie__markup__tab button {
+  background-color: inherit;
+  font-family: Noto Sans TC, sans-serif;
+  letter-spacing: 0.03em;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  color: #fff;
+}
+
+/* Change background color of buttons on hover */
+.movie__markup__tab button:hover {
+  background-color: $headerFooterColor;
+  color: #fff;
+}
+
+/* Create an active/current tablink class */
+.movie__markup__tab button.tablinks__active::after {
+  // background-color: $primaryColor;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  height: 3px;
+
+  background-color: #f8104d;
+  transition: background-color 0.4s;
+}
+
+/* Style the tab content */
+.movie__markup__tabcontent {
+  display: none;
+
+  background-color: $ListMovieColor;
+  border-top: none;
+}
+
+.movie__markup__tabcontent {
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.card-title-movie {
+  max-width: 80%;
+  letter-spacing: 0.03em;
+
+  font-size: 22px;
+  font-weight: 700;
+  font-style: normal;
+  margin-top: 16px;
+  margin-bottom: 12px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 32px;
+    font-weight: 900;
+  }
+}
+
+.movie__content {
+  position: relative;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 20px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-left: 25px;
+    font-size: 32px;
+  }
+
+  .card-text-rainting {
+    font-size: 18px;
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+    }
+  }
+}
+
+.card-body-date {
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+.card-group-icons {
+  margin: 0;
+  font-size: 30px;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.card__actors {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.list__actors {
+  width: 100%;
+  flex-wrap: wrap;
+  display: grid;
+
+  margin: 0 auto 15px;
+  padding: 0;
+
+  @media screen and (max-width: 540px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+
+  @media screen and (min-width: 541px) and (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+.list__actor-name {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 14px;
+  text-align: center;
+}
+.list__actor-moviename {
+  margin-top: 5px;
+  margin-bottom: 0;
+  font-size: 12px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.list__reviews {
+  padding: 0 auto 15px;
+  margin: 0;
+
+  .list__review-card {
+    position: relative;
+    padding: 10px 20px 30px 20px;
+    margin-bottom: 0;
+
+    .list__review {
+      margin-top: 5px;
+      margin-bottom: 0;
+      font-size: 12px;
+      text-align: start;
+      font-weight: 300;
+    }
+  }
+}
+
+.list__reviews.no-reviews {
+  padding-top: 40px;
+  text-align: center;
+  height: 200px;
+}
+
+.list__review-card:not(:last-child):after {
+  // background-color: $primaryColor;
+  position: absolute;
+  left: 20px;
+
+  bottom: 0;
+  content: '';
+  height: 1px;
+  width: 70%;
+  background-color: #9286ca;
+}
+
+.list__name-user {
+  color: #9286ca;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 14px;
+  text-align: start;
+}
+
+.list__date-review {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 10px;
+  text-align: start;
+}
+
+.movie__markup__tabcontent {
+  padding-bottom: 15px;
+}
+
+.card__trailers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-trailers-title {
+  margin-top: 25px;
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.card__trailers-video {
+  margin-top: 25px;
+  width: 80%;
+  height: 360px;
+}

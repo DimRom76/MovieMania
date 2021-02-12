@@ -1,5 +1,10 @@
 .material-icons.user,
 .material-icons.login {
-  font-size: 40px;
+  font-size: 35px;
   cursor: pointer;
+  vertical-align: bottom;
+
+  @media screen and (min-width: 768px) {
+    font-size: 38px;
+  }
 }

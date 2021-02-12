@@ -1,0 +1,13 @@
+<div class="card__actors">
+    <ul class="list__actors">
+        {{#each this}}
+        <li class="list__actor-card">
+
+            <img src="{{profile_path}}" alt="{{name}}" width="100px" height="150px">
+
+            <h3 class="list__actor-name">{{name}}</h3>
+            <p class="list__actor-moviename">{{character}}</p>
+        </li>
+        {{/each}}
+    </ul>
+</div>

@@ -8,63 +8,101 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>MovieMania</title>
   </head>
 
-  <body >
+  <body>
+    <div class="preloader">
+      <div class="loader">
+        <div class="face">
+          <div class="circle"></div>
+        </div>
+        <div class="face">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-preloader">
+      <div class="preloader-text">
+        <b>M</b><b>O</b><b>V</b><b>I</b><b>E</b><b>M</b><b>A</b><b>N</b><b>I</b
+        ><b>A</b>
+      </div>
+    </div>
+
     <header class="header">
       <nav class="navigation">
-        <ul class="navigation__list">
-          <li class="navigation__list__item"><a href="">Главная</a></li>
-          <li class="navigation__list__item list">
-            <a href="">Списки</a>
-            <ul class="navigation__movie__list is-hidden">
-              <li><a href="">Просмотренные</a></li>
-              <li><a href="">Очередь</a></li>
-            </ul>
-          </li>
-        </ul>
-        <div class="languages">
-          <img
-            class="language ru__icon"
-            src="./images/ru.png"
-            alt="language russian"
-            width="30px"
-            height="30px"
-          />
-          <img
-            class="language en__icon"
-            src="./images/en.png"
-            alt="language english"
-            width="30px"
-            height="30px"
-          />
+        <div class="header-logo-nav">
+          <a class="header-logo-link" href="./">
+            <span>MOVIE</span>
+            <br />
+            <span>MANIA</span>
+          </a>
         </div>
 
-        <div class="user__navigation">
-          <p class="user__account is-hidden">
-            <i class="material-icons user">account_circle</i>
-          </p>
-          <p class="user__login"><i class="material-icons login">login</i></p>
+        <div class="navigation-main">
+          <div class="navigation-left-side">
+            <i class="material-icons icons__header__home">home</i>
+          </div>
+
+          <div class="menu-lang-user">
+            <div class="languages">
+              <p class="ru__icon active__language" data-lang="ru-RU">RU</p>
+              <span class="languages__separator">|</span>
+              <p class="en__icon" data-lang="en-EN">EN</p>
+            </div>
+
+            <div class="user__navigation">
+              <p class="user__account is-hidden">
+                <i class="material-icons user">account_circle</i>
+              </p>
+              <div class="wrapper" aria-expanded="false">
+                <div class="menu">
+                  <ul class="menu__list"></ul>
+                </div>
+                <p class="menu is"></p>
+                <p class="user__login">
+                  <i class="material-icons login">login</i>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="navigation-right-side">
+          <form class="search__films">
+            <p class="search__films__title"></p>
+            <label class="search__films_by">
+              <input class="name search__string" type="search" />
+            </label>
+
+            <div class="search__genres is-hidden">
+              <select multiple data-multi-select-plugin></select>
+            </div>
+
+            <button class="btn__search_form" type="submit">
+              <i class="material-icons search">search</i>
+            </button>
+          </form>
         </div>
       </nav>
     </header>
-    <main class="main container">
-      <div class='list_movies'></div>
-      <button
-      class="btn btn-primary is-hidden"
-      type="button"
-      data-action="load more"
-    >
-      <span
-        class="spinner-border spinner-border-sm is-hidden"
-        role="status"
-        aria-hidden="true"
-      ></span>
 
-      <span class="label spinner">See more</span>
+    <main class="main container">
+      <div class="main_list">
+        <div class="list_movies"></div>
+        <div id="pagination" class="tui tui tui-pagination"></div>
+      </div>
+      <div class="main_card"></div>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="footer_container">
+        <span class="footer_copyright"
+          >© 2020 | All Rights Reserved | Developed with
+        </span>
+        <span class="material-icons footer-icon">favorite</span>
+        <span class="footer_copyright team">Angry Beavers</span>
+      </div>
+    </footer>
   </body>
 </html>

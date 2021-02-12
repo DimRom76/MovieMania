@@ -1,9 +1,13 @@
-import './scss/main.scss';
-import './js/header';
-import './js/main';
-import './js/footer';
 import './js/preLoaderPage';
-import './js/language-localstorage';
-import './js/registration';
-import './js/login';
+import './scss/main.scss';
+import './js/initRouter';
+import './js/inputChoice';
+import './js/header';
+import './js/changeLanguage';
+import './js/submitRegForm';
+import './js/submitLogForm';
 import './js/checkUser';
+import findFilm from './js/findFilm';
+import './js/userFilmsByStatus';
+
+findFilm.createGanresList();

@@ -1,12 +1,18 @@
 {{#each this}}
-    <div data-id={{id}} class="card">
-        <img class="card-img-top" src="https://image.tmdb.org/t/p/w500{{poster_path}}" data-id={{"id"}} alt={{title}} />
-        <h5 class="card-title" data-id={{id}}>{{title}} ({{release_date}}) </h5>
-        <p class="card-text" data-id={{id}}>Рейтинг: {{vote_average}}</p>
-        <div class="btn-group btn-group-sm" role="group" >
-            <button type="button" class="btn btn-light" data-id={{id}}>Избранное</button>
-            <button type="button" class="btn btn-light" data-id={{id}}>Посмотреть</button>
-            <button type="button" class="btn btn-light" data-id={{id}}>Посмотрел</button>
+<div data-id={{id}} class="card" data-poster='{{poster_path}}' data-vote={{vote_average}} data-title='{{title}}' data-release={{release_date}}>
+
+    <div class="card__movie_markup">
+        <img class="card-img-top" src="{{poster_path}}" data-id={{id}} alt={{title}} width="300px" height="450px" />
+
+        <p class="card-text" ><i
+                class="material-icons icon-raiting icon-raiting-markup">star_rate</i><span>{{vote_average}}</span></p>
+    </div>
+
+    <div class="card-release-general">
+        <h5 class="card-main-title">{{title}}</h5>
+        <p class="text-release-vote">{{release_date}}</p>
+        <div class="btn-group btn-group-sm status__film__js" data-container={{id}} role="group">
         </div>
     </div>
-{{/each}} 
+</div>
+{{/each}}

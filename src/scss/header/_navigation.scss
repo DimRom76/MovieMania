@@ -1,51 +1,290 @@
-ul {
-  list-style: none;
-}
+.header {
+  background-color: $headerFooterColor;
 
-/* .is-hidden {
-  display: none;
-} */
+  position: sticky;
+  top: -1px;
+  z-index: 888;
+
+  min-width: 320px;
+}
 
 .navigation {
+  width: 100%;
+  position: relative;
+  padding-top: 20px;
+  padding-right: 15px;
+  padding-left: 85px;
+
+  @media screen and (max-width: 768px) {
+    height: 137px;
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 80px;
+    padding-left: 150px;
+    padding-right: 15px;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    height: 66px;
+    width: 96px;
+    top: 0;
+    left: 0;
+    background-color: #f8104d;
+    transform: skewX(20deg);
+    margin-left: -20px;
+
+    @media screen and (min-width: 768px) {
+      width: 140px;
+      height: 80px;
+    }
+  }
+}
+
+.navigation-main {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+
+  & .navigation__list {
+    display: flex;
+    margin-right: 20px;
+
+    & .navigation__list__item {
+      padding: 25px 0;
+      margin-right: 20px;
+      margin-left: 60px;
+
+      &:hover,
+      &:focus {
+        color: $secondaryColor;
+      }
+    }
+  }
 }
 
-.navigation__list {
+.header-logo-link {
+  position: absolute;
+  left: -12px;
+  top: 5px;
+  padding: 16px 39px 16px 21px;
+  font-weight: 600;
+  font-size: 13px;
+
+  z-index: 1000;
+
+  @media screen and (min-width: 768px) {
+    font-weight: 700;
+    font-size: 16px;
+    padding: 12px 55px 12px 25px;
+  }
+}
+
+.navigation-left-side {
+  width: 77%;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    // margin-right: 165px;
+    width: 27%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    // margin-right: 165px;
+    width: 50%;
+  }
+
+  & .icons__header__home {
+    font-size: 35px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 38px;
+    }
+  }
+}
+
+.navigation-left-side:hover .icons__header__home {
+  color: #f8104d;
+}
+
+.navigation-right-side {
   display: flex;
-  margin-right: 20px;
-}
+  display: block;
+  position: absolute;
+  top: 70px;
+  right: 15%;
+  width: 80%;
 
-.navigation__list__item {
-  margin-right: 20px;
-}
+  @media screen and (min-width: 768px) {
+    top: 17px;
+    right: 32%;
+    width: 300px;
+  }
 
-.navigation__list__item.list:hover,
-.navigation__list__item.list:focus {
-  background-color: red;
+  @media screen and (min-width: 1024px) {
+    right: 40%;
+  }
 }
 
 .navigation__movie__list.is-hidden {
   display: none;
 }
 
-.user__navigation {
+.search__films {
+  position: relative;
+
+  & .search__films__title {
+    margin: 0;
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+    @media screen and (min-width: 768px) {
+      margin-left: 10px;
+    }
+
+    & .search_films_name,
+    .search_films_genres,
+    .search_films_actors {
+      cursor: pointer;
+    }
+
+    & .active__search {
+      color: #f8104d;
+    }
+  }
+
+  & .name,
+  .genres {
+    width: 106%;
+    height: 30px;
+    padding: 2.5px 8.5px 3px;
+    background-color: #281f55;
+    color: #f7f5ff;
+    border: none;
+    font-family: Noto Sans TC, sans-serif;
+    letter-spacing: 0.03em;
+    font-size: 300;
+
+    @media screen and (min-width: 768px) {
+      height: 25px;
+    }
+
+    &:active,
+    &:focus {
+      outline: none;
+      color: #fff;
+    }
+  }
+
+  & .header-search {
+    width: 70%;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    background-color: transparent;
+    overflow: visible;
+    outline: none;
+
+    &::placeholder {
+      color: #fff;
+      font-size: 12px;
+    }
+  }
+
+  & .search-btn {
+    // display: inline-flex;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+  }
+
+  & .en__icon,
+  .ru__icon {
+    cursor: pointer;
+  }
+}
+
+.search__films_by {
+  align-items: center;
+}
+
+.btn__search_form {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 107%;
+
+  @media screen and (min-width: 768px) {
+    right: -25px;
+  }
+
+  .material-icons.search {
+    color: #fff;
+    font-size: 22px;
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+.menu-lang-user {
   display: flex;
+  align-items: center;
 }
 
 .languages {
-  position: absolute;
-  left: 80%;
-  top: 3%;
-  cursor: pointer;
-  /* margin-left: auto; */
+  display: flex;
+  color: #fff;
+  // justify-content: center;
+  // align-items: center;
+  margin-right: 10px;
+
+  @media screen and (min-width: 768px) {
+    margin-right: 50px;
+  }
+
+  & .hidden {
+    display: none;
+  }
+
+  & .language__icon {
+    color: #6152a8;
+  }
+
+  & .language {
+    margin-right: 10px;
+  }
+
+  & .languages__separator {
+    margin: 0 5px;
+  }
+
+  & .active__language {
+    color: #f8104d;
+    box-shadow: 0 2px 0 #6152a8, inset 0 0 0 #6152a8;
+  }
+  & .en__icon,
+  .ru__icon {
+    cursor: pointer;
+  }
 }
-.languages .hidden {
-  display: none;
+
+.user__login {
+  margin: 0;
 }
 
 .user__navigation {
-  margin-left: auto;
+  display: flex;
+  position: relative;
 }
 
 /*  */

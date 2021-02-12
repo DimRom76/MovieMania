@@ -1,5 +1,23 @@
+@import './base/general.scss';
+@import './base/fonts.scss';
+@import './preloaderPage/circle-preloader.scss';
+@import './preloaderPage/words-preloader.scss';
+
+@import './header/menu';
+@import './header/menuDesktop';
 @import './header/header-registration';
+@import './header/_input-choice';
 @import './header/navigation';
-@import './header/list-movie';
 @import './header/login';
-@import './header/modal-window';
+
+@import './movieList/movieList';
+@import './movieList/movie-card.scss';
+@import './movieList/interestsBtn';
+@import './movieList/message';
+
+@import './pagination/pagination.scss';
+
+@import './footer/footer-main.scss';
+@import './footer/team.scss';
+
+@import './modal/modal';

@@ -1,32 +1,30 @@
 import movieMarkup from '../templates/movieMarkup.hbs';
-import showMovieCard from './showMovieCard';
-// import handlebars from 'handlebars';
+import { filmStatus } from './updateUserData';
+import fetchApi from './services/apiService';
 
-const refs = {
-  listMovies: document.querySelector('.list_movies'),
-};
-
-refs.listMovies.addEventListener('click', onCardClick);
-
-function onCardClick(e) {
-  e.preventDefault();
-
-  if (e.target.dataset.id === undefined) {
-    return;
-  }
-
-  if (e.target.nodeName === 'BUTTON') {
-    return;
-  }
-  //   console.dir(e.target.nodeName);
-  showMovieCard(e.target.dataset.id);
-}
-
-// handlebars.registerHelper('stringifyFunc', function (fn) {
-//   return fn;
-// });
+import refs from './refs';
 
 export default function showMovie(data) {
+  refs.listMovies.innerHTML = '';
   refs.listMovies.insertAdjacentHTML('beforeend', movieMarkup(data));
-  //return markup;
+
+  const imgListFilms = document.querySelectorAll('.card-img-top');
+
+  imgListFilms.forEach(imgFilm =>
+    imgFilm.addEventListener('click', onCLickImgFilm),
+  );
+
+  const statusListFilm = document.querySelectorAll('.status__film__js');
+
+  statusListFilm.forEach(statusFilm =>
+    statusFilm.addEventListener('click', filmStatus),
+  );
+}
+
+function onCLickImgFilm(e) {
+  e.preventDefault();
+
+  const id = e.target.dataset.id;
+
+  fetchApi.setLocation(`#/movie/${id}`);
 }

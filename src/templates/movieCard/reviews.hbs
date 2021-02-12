@@ -1,0 +1,11 @@
+<div class="card__reviews">
+    <ul class=" list__reviews">
+        {{#each this}}
+            <li class="list__review-card">
+                <h4 class="list__name-user">{{author}}</h4>
+                <p class="list__date-review">{{created_at}} </p>
+                <p class="list__review">{{content}}</p>
+            </li>
+        {{/each}}
+        </ul>
+</div>

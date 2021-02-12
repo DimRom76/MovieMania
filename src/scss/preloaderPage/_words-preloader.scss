@@ -1,0 +1,112 @@
+.page-preloader {
+  background: linear-gradient(
+    135deg,
+    $primaryColorCircle,
+    $headerFooterColor,
+    $headerFooterColor,
+    $primaryColorCircle
+  );
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  z-index: 99998;
+  overflow: auto;
+  animation: 5s opacity;
+  position: fixed;
+
+  .preloader-text {
+    position: absolute;
+    bottom: 103px;
+    right: -61px;
+    width: 100%;
+    text-align: center;
+    margin: 20%;
+    animation: 10s opacity;
+
+    @media (min-width: 768px) {
+      bottom: 30px;
+      right: -10px;
+    }
+  }
+}
+
+.preloader-text > b {
+  display: inline-block;
+  font-size: 25px;
+  line-height: 1.5;
+
+  animation: flip 3s ease-out infinite;
+  text-shadow: 2px 2px 4px $secondaryColorCircle;
+
+  @media (min-width: 768px) {
+    font-size: 35px;
+  }
+}
+
+@keyframes flip {
+  0% {
+    color: $primaryColorCircle;
+    font-weight: 400;
+    letter-spacing: -0.1em;
+  }
+
+  30%,
+  70% {
+    color: $primaryColorCircle;
+    font-weight: 400;
+  }
+
+  35%,
+  65% {
+    color: $primaryColorCircle;
+    font-weight: 700;
+    transform: rotateY(0);
+  }
+
+  40% {
+    color: $secondaryColorCircle;
+  }
+
+  45% {
+    color: $secondaryColorCircle;
+  }
+
+  50% {
+    color: $secondaryColorCircle;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    transform: rotateY(90deg);
+  }
+
+  55% {
+    color: $secondaryColorCircle;
+  }
+
+  60% {
+    color: $secondaryColorCircle;
+  }
+
+  100% {
+    color: $secondaryColorCircle;
+    letter-spacing: -0.1em;
+    font-weight: 400;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
